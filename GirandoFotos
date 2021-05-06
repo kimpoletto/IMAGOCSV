@@ -1,0 +1,17 @@
+import os
+from PIL import Image
+
+diretorio = r'C:\Users\c0624150\OneDrive - Vale S.A\Pictures\IMAGO\GIRAR'
+#lista = []
+for root, dirs, files in os.walk(diretorio):
+    for arquivo in files:
+        
+        img = Image.open(f'{root}\{arquivo}')
+        
+        
+        b = 180
+        
+        img = img.rotate(angle=b,expand=True)
+        
+        img.save(f'{root}\{arquivo}')
+        
